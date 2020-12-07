@@ -20,8 +20,11 @@ class AliExpress(object):
 
         start_price = info_json['priceModule']['minActivityAmount']['value']
         end_price = info_json['priceModule']['maxActivityAmount']['value']
+        image_url = info_json['imageModule']['imagePathList'][0]
+        title = info_json['titleModule']['subject']
 
-        item_info_dict = {'items_left': items_left, 'start_price': start_price, 'end_price': end_price}
+        item_info_dict = {'items_left': items_left, 'start_price': start_price, 'end_price': end_price,
+                          'title': title, 'image_url': image_url}
 
         return item_info_dict
 
